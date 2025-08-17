@@ -176,7 +176,7 @@ if (app.Environment.IsDevelopment()) {
     app.MapOpenApi();
 }
 
-app.UseAppRoles(); <-- Diese Zeile ist neu
+app.UseAppRoles(); //<-- Diese Zeile ist neu
 app.UseHttpsRedirection();
 ```
 
