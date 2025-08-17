@@ -185,10 +185,6 @@ app.UseHttpsRedirection();
 - Windows Auth wird unterstützt, aber das Paket kann auch mit anderen Authentifizierungsmethoden kombiniert werden.
 - Die Claims können im Code bequem aus `ClaimsPrincipal` ausgelesen werden.
 
-## Weiterführende Links
-
-- [NuGet Gallery – AppRoles](https://www.nuget.org/packages/AppRoles)
-
 ## Lizenz
 
 MIT – siehe [LICENSE](LICENSE).
