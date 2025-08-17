@@ -43,7 +43,7 @@ Mit AppRoles können Rollen flexibel und zentral in der Konfigurationsdatei (`ap
 
 1. NuGet-Paket installieren
 ```bash
-dotnet add package SirKyomi.AppRoles
+dotnet add package AppRoles
 ```
 
 2. Rollen in der `appsettings.json` konfigurieren:
@@ -93,7 +93,7 @@ dotnet add package SirKyomi.AppRoles
 
 **1. NuGet-Paket installieren**
 ```bash
-dotnet add package AppRoles.Provider
+dotnet add package AppRoles
 ```
 
 **2. Rollen in `appsettings.json` definieren**
@@ -145,7 +145,7 @@ app.Run();
 
 **1. NuGet-Paket installieren**
 ```bash
-dotnet add package AppRoles.Provider
+dotnet add package AppRoles
 ```
 
 **2. Rollen in `appsettings.json` definieren**  
@@ -187,11 +187,11 @@ app.UseHttpsRedirection();
 
 ## Weiterführende Links
 
-- [NuGet Gallery – AppRoles.Provider](https://www.nuget.org/packages/AppRoles.Provider) *(Link anpassen, wenn verfügbar)*
+- [NuGet Gallery – AppRoles](https://www.nuget.org/packages/AppRoles)
 
 ## Lizenz
 
-MIT – siehe LICENSE.
+MIT – siehe [LICENSE](LICENSE).
 
 ## Kontakt
 
