@@ -5,15 +5,7 @@ using Microsoft.Extensions.Configuration;
 
 namespace AppRoles;
 
-public class RoleClaimsTransformation : IClaimsTransformation
-{
-    private readonly IConfiguration _configuration;
-    private readonly AppRolesOptions _appRolesOptions;
-    public RoleClaimsTransformation(IConfiguration configuration, AppRolesOptions appRolesOptions) {
-        _configuration = configuration;
-        _appRolesOptions = appRolesOptions;
-    }
-
+public class RoleClaimsTransformation(AppRolesOptions appRolesOptions) : IClaimsTransformation {
     public Task<ClaimsPrincipal> TransformAsync(ClaimsPrincipal principal)
     {
         var authId = principal.Identities.FirstOrDefault(i => i.IsAuthenticated);
@@ -26,7 +18,7 @@ public class RoleClaimsTransformation : IClaimsTransformation
         if (roleIdentity == null)
         {
             roleIdentity = new ClaimsIdentity(
-                authenticationType: _appRolesOptions.IdentityName,
+                authenticationType: appRolesOptions.IdentityName,
                 nameType: authId.NameClaimType,
                 roleType: ClaimTypes.Role
             );
@@ -36,8 +28,7 @@ public class RoleClaimsTransformation : IClaimsTransformation
         }
 
         var username = authId.Name;
-        var rolesSection = _configuration.GetSection(_appRolesOptions.AppsettingsSection);
-        foreach (var role in rolesSection.GetChildren())
+        foreach (var role in appRolesOptions.ConfigurationSection.GetChildren())
         {
             var users = role.Get<List<string>>();
             if (users?.Contains(username, StringComparer.OrdinalIgnoreCase) != true) continue;

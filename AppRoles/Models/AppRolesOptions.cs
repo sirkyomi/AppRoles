@@ -3,7 +3,6 @@
 namespace AppRoles.Models;
 
 public class AppRolesOptions {
-    public string AppsettingsSection { get; set; } = "Roles";
     public string IdentityName { get; set; } = "AppRoles-Identity";
-    public IConfiguration Configuration { get; set; } = null!;
+    public IConfigurationSection ConfigurationSection { get; set; } = null!;
 }

@@ -69,9 +69,8 @@ dotnet add package SirKyomi.AppRoles
 3. Anwendung konfigurieren:
    ```csharp
    builder.Services.AddAppRoles(options => {
-    options.AppsettingsSection = "Roles"; //Appsettings-Key
     options.IdentityName = "AppRoles-Identity"; //Identity-Name für die neue Identity
-    options.Configuration = builder.Configuration; //Konfiguration, aus der ausgelesen werden soll
+    options.ConfigurationSection = builder.Configuration.GetSection("Roles"); //Konfigurations-Sektion, aus der ausgelesen werden soll
    });
    
    ...
@@ -115,9 +114,8 @@ using AppRoles.Extensions;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddAppRoles(options => {
-    options.AppsettingsSection = "Roles"; //Appsettings-Key
     options.IdentityName = "AppRoles-Identity"; //Identity-Name für die neue Identity
-    options.Configuration = builder.Configuration; //Konfiguration, aus der ausgelesen werden soll
+    options.ConfigurationSection = builder.Configuration.GetSection("Roles"); //Konfigurations-Sektion, aus der ausgelesen werden soll
 });
 
 builder.Services.AddControllersWithViews();
@@ -160,9 +158,8 @@ using AppRoles.Extensions;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddAppRoles(options => {
-    options.AppsettingsSection = "Roles"; //Appsettings-Key
     options.IdentityName = "AppRoles-Identity"; //Identity-Name für die neue Identity
-    options.Configuration = builder.Configuration; //Konfiguration, aus der ausgelesen werden soll
+    options.ConfigurationSection = builder.Configuration.GetSection("Roles"); //Konfigurations-Sektion, aus der ausgelesen werden soll
 });
 
 // Add services to the container.
@@ -176,7 +173,7 @@ if (app.Environment.IsDevelopment()) {
     app.MapOpenApi();
 }
 
-app.UseAppRoles(); <-- Diese Zeile ist neu
+app.UseAppRoles(); //<-- Diese Zeile ist neu
 app.UseHttpsRedirection();
 ```
 

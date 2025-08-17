@@ -10,7 +10,7 @@ public static class ServiceCollectionExtensions {
         var optionsInstance = new AppRolesOptions();
         options.Invoke(optionsInstance);
         services.AddAuthentication(NegotiateDefaults.AuthenticationScheme).AddNegotiate();
-        services.AddAuthorization(authOptions => authOptions.AddRolePoliciesFromConfig(optionsInstance.Configuration));
+        services.AddAuthorization(authOptions => authOptions.AddRolePoliciesFromConfig(optionsInstance.ConfigurationSection));
         services.AddSingleton(optionsInstance);
         services.AddTransient<IClaimsTransformation, RoleClaimsTransformation>();
         return services;
