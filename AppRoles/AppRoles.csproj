@@ -4,6 +4,12 @@
         <TargetFramework>net8.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <Authors>SirKyomi</Authors>
+        <Description>AppRoles ermöglicht das zentrale Definieren von Benutzerrollen in der appsettings.json und erstellt für jeden authentifizierten Benutzer automatisch eine Identity mit allen konfigurierten Rollen. Die Authentifizierung läuft über Windows Auth, wodurch sich die Lösung optimal für interne Unternehmensanwendungen eignet.</Description>
+        <RepositoryUrl>https://github.com/sirkyomi/AppRoles</RepositoryUrl>
+        <PackageProjectUrl>https://github.com/sirkyomi/AppRoles</PackageProjectUrl>
+        <PackageLicenseUrl>https://github.com/sirkyomi/AppRoles/blob/master/LICENSE</PackageLicenseUrl>
     </PropertyGroup>
 
     <ItemGroup>
